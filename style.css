@@ -1,0 +1,1278 @@
+/* =========================
+   PADRONIZANDO
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: #ffffff;
+
+    font-family: 'Nunito', sans-serif;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.nav-bar {
+    width: 100%;
+    height: 95px;
+
+    padding: 0 65px;
+
+    background-color: #F3ECE1;
+
+    display: flex;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+}
+
+
+/* =========================
+   LOGO E TEXTOS
+========================= */
+
+.logo-container {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.logotipo {
+    width: 65px;
+    height: auto;
+
+    display: block;
+}
+
+.escritalogo {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+
+    color: #2C221E;
+
+    font-family: 'Nunito', sans-serif;
+
+    line-height: 1.1;
+}
+
+.escritalogo strong {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.escritalogo span {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+/* =========================
+   ÁREAS DE NAVEGAÇÃO
+========================= */
+
+.navegacao {
+    display: flex;
+    align-items: center;
+
+    margin-left: auto;
+}
+
+.abas-nav {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.abas-nav li {
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+.abas-nav a {
+    color: #292522;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition: color 0.3s ease;
+}
+
+.abas-nav a:hover {
+    color: #bd5c35;
+}
+
+
+/* =========================
+   BOTÃO "QUERO AJUDAR"
+========================= */
+
+.ajudar-button {
+    background-color: #bd5c35;
+
+    color: #ffffff !important;
+
+    padding: 13px 22px;
+
+    border-radius: 30px;
+
+    font-size: 15px !important;
+    font-weight: 600 !important;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.ajudar-button:hover {
+    background-color: #a94f2c;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   CONTEÚDO DA PÁGINA
+========================= */
+
+main {
+    padding-top: 95px;
+}
+
+
+
+
+
+
+
+
+/* =========================
+   SEÇÃO 1
+========================= */
+
+.secao-inicio {
+    height: auto;
+    min-height: 0;
+    padding: 60px 5% 0;
+    background-color: #f5eee3;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.cont-inicio {
+    width: 48%;
+    padding-left: 20px;
+    align-self: center;
+    transform: translateY(-40px);
+}
+
+/* =========================
+   SUBTÍTULO
+========================= */
+
+.subtitulo-inicio {
+    margin-bottom: 20px;
+    color: #B85B35;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.subtitulo-inicio span {
+    display: inline-block;
+    width: 15px;
+    height: 2px;
+    margin-right: 7px;
+    background-color: #B85B35;
+    vertical-align: middle;
+}
+
+/* =========================
+   TÍTULO
+========================= */
+
+.cont-inicio h1 {
+    margin-bottom: 25px;
+    color: #292522;
+    font-size: 70px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -1px;
+}
+
+/* =========================
+   DESCRIÇÃO
+========================= */
+
+.desc-inicio {
+    max-width: 450px;
+    margin-bottom: 30px;
+    color: #756e68;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+.botoes-inicio {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Botão "Conheça quem espera" */
+
+.quem-espera {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 20px;
+    background-color: #bd5c35;
+    color: #ffffff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.quem-espera span {
+    font-size: 15px;
+}
+
+.quem-espera:hover {
+    background-color: #a94f2c;
+    transform: translateY(-2px);
+}
+
+/* Link "Apoie o abrigo" */
+
+.apoie-abrigo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #292522;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.apoie-abrigo span {
+    font-size: 17px;
+}
+
+.apoie-abrigo:hover {
+    color: #bd5c35;
+}
+
+/* =========================
+   LINK DE CUIDADO
+========================= */
+
+.explorar-cuidado {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 35px;
+    color: #756e68;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.explorar-cuidado span {
+    color: #bd5c35;
+    font-size: 16px;
+}
+
+
+/* =========================
+   IMAGEM DO SCOOBY
+========================= */
+
+.img-scooby {
+    position: relative;
+    width: 55%;
+    height: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    align-self: flex-end;
+}
+
+.img-scooby > img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    display: block;
+}
+
+/* =========================
+   SEÇÃO O ABRIGO
+========================= */
+
+.secao-abrigo {
+    min-height: 850px;
+    padding: 0 0 80px;
+    background-color: #2c211d;
+    color: #f5eee3;
+    overflow: hidden;
+}
+
+
+/* =========================
+   FOTOS - ARCO
+========================= */
+
+.fotos-abrigo {
+    width: 100%;
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    overflow: hidden;
+}
+
+.foto-abrigo {
+    width: 205px;
+    height: 295px;
+    object-fit: cover;
+    border-radius: 25px 60px 25px 60px;
+    display: block;
+    flex-shrink: 0;
+}
+
+
+/* FOTO 1 */
+.foto-1 {
+    margin-top: 160px;
+    transform: rotate(-31deg);
+    opacity: 0.25;
+}
+
+/* FOTO 2 */
+.foto-2 {
+    margin-top: 70px;
+    transform: rotate(-19deg);
+    opacity: 0.50;
+    margin-right: 20px;
+}
+
+/* FOTO 3 - CENTRO */
+.foto-3 {
+    margin-top: 40px;
+    transform: rotate(0deg);
+    opacity: 1;
+}
+
+/* FOTO 4 */
+.foto-4 {
+    margin-top: 70px;
+    transform: rotate(19deg);
+    opacity: 0.50;
+    margin-left: 20px;
+}
+
+/* FOTO 5 */
+.foto-5 {
+    margin-top: 160px;
+    transform: rotate(31deg);
+    opacity: 0.25;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.conteudo-abrigo {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 25px;
+    text-align: center;
+}
+
+
+/* =========================
+   SUBTÍTULO
+========================= */
+
+.subtitulo-abrigo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 18px;
+    color: #f0a04b;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.subtitulo-abrigo span {
+    width: 18px;
+    height: 2px;
+    background-color: #bd5c35;
+    display: block;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.conteudo-abrigo h2 {
+    margin-bottom: 20px;
+    color: #f5eee3;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -1px;
+}
+
+
+/* =========================
+   DESCRIÇÃO
+========================= */
+
+.desc-abrigo {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #c7bbb3;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   FRASE FINAL
+========================= */
+
+.frase-abrigo {
+    width: 100%;
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.frase-abrigo span {
+    height: 1px;
+    flex: 1;
+    background-color: #584b45;
+}
+
+.frase-abrigo p {
+    margin: 0;
+    color: #bd5c35;
+    font-size: 9px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* =========================
+   SEÇÃO O QUE FAZEMOS
+========================= */
+
+.secao-fazemos {
+    width: 100%;
+    padding: 80px 5%;
+
+    background-color: #f5eee3;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================
+   CABEÇALHO DA SEÇÃO
+========================= */
+
+.header-fazemos {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+
+    border-bottom: 1px solid #dcd3c6;
+}
+
+.titulos-fazemos {
+    width: 50%;
+}
+
+.subtitulo-fazemos {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+    margin-bottom: 20px;
+
+    color: #bd5c35;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.subtitulo-fazemos span {
+    width: 25px;
+    height: 2px;
+
+    background-color: #bd5c35;
+}
+
+.titulos-fazemos h2 {
+    color: #292522;
+
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.desc-fazemos {
+    width: 40%;
+    max-width: 420px;
+
+    color: #756e68;
+
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CARDS - GRID E FUNDO
+========================= */
+
+.grid-cards-fazemos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    margin-bottom: 40px;
+}
+
+.card-fazemos {
+    position: relative;
+
+    height: 480px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 35px 30px;
+}
+
+/* Máscara gradiente laranja por cima da imagem */
+.card-fazemos::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(180deg, rgba(189, 92, 53, 0.45) 0%, rgba(189, 92, 53, 0.95) 100%);
+
+    z-index: 1;
+}
+
+/* Imagens (coloque o caminho das suas imagens aqui) */
+.bg-card-1 { background-image: url('imagens/foto 1 secao apoio.jpeg'); }
+.bg-card-2 { background-image: url('imagens/foto 5 secao apoio.jpeg'); }
+.bg-card-3 { background-image: url('imagens/foto homem segurando cachorro.jpeg'); }
+
+
+/* =========================
+   CARDS - CONTEÚDO E TEXTOS
+========================= */
+
+.conteudo-card {
+    position: relative;
+    z-index: 2;
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    color: #ffffff;
+}
+
+.topo-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icone-card {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.numero-card {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.base-card h3 {
+    margin-bottom: 15px;
+
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.base-card p {
+    margin-bottom: 30px;
+
+    color: #f5eee3;
+
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.link-card {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    transition: transform 0.3s ease;
+}
+
+.link-card:hover {
+    transform: translateX(5px);
+}
+
+
+/* =========================
+   RODAPÉ DA SEÇÃO
+========================= */
+
+.rodape-fazemos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rodape-fazemos p {
+    color: #292522;
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.link-rodape-fazemos {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #292522;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    transition: color 0.3s ease;
+}
+
+.link-rodape-fazemos:hover {
+    color: #bd5c35;
+}
+
+/* =========================
+   SEÇÃO IMPACTO
+========================= */
+
+.secao-impacto {
+    width: 100%;
+    padding: 80px 5%;
+
+    background-color: #bd5c35;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+
+/* =========================
+   LADO ESQUERDO - TEXTOS
+========================= */
+
+.cont-impacto-esq {
+    width: 45%;
+
+    color: #ffffff;
+}
+
+.subtitulo-impacto {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+    margin-bottom: 25px;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.subtitulo-impacto span {
+    width: 25px;
+    height: 1px;
+
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.cont-impacto-esq h2 {
+    margin-bottom: 25px;
+
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.cont-impacto-esq p {
+    max-width: 450px;
+    margin-bottom: 40px;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.linha-divisoria-impacto {
+    width: 100%;
+    max-width: 450px;
+    height: 1px;
+
+    margin-bottom: 35px;
+
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* =========================
+   ESTATÍSTICAS (01, 02, 03)
+========================= */
+
+.stats-impacto {
+    display: flex;
+    gap: 50px;
+}
+
+.stat-item h3 {
+    margin-bottom: 5px;
+
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.stat-item p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+/* =========================
+   LADO DIREITO - IMAGEM E CARD
+========================= */
+
+.cont-impacto-dir {
+    width: 70%;
+}
+
+.imagem-impacto-bg {
+    position: relative;
+
+    width: 100%;
+    height: 550px;
+
+    border-radius: 82px 24px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card-historia {
+    position: absolute;
+    bottom: 30px;
+    left: 40px; 
+
+    width: 340px;
+    padding: 30px;
+
+    background-color: #2c211d;
+    border-radius: 20px;
+
+    color: #f5eee3;
+}
+
+.tag-historia {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+    margin-bottom: 15px;
+
+    color: #f0a04b;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.card-historia p {
+    margin-bottom: 25px;
+
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.link-historia {
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: color 0.3s ease;
+}
+
+.link-historia:hover {
+    color: #f0a04b;
+}
+
+
+/* =========================
+   RESPONSIVIDADE BÁSICA
+========================= */
+
+@media (max-width: 1024px) {
+    .card-historia {
+        left: 20px;
+        width: calc(100% - 40px);
+    }
+}
+
+/* =========================
+   SECÇÃO NOSSA RAZÃO
+========================= */
+
+.secao-razao {
+    width: 100%;
+    padding: 80px 5%;
+
+    background-color: #f5eee3;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+
+/* =========================
+   LADO ESQUERDO - TEXTOS
+========================= */
+
+.cont-razao-esq {
+    width: 45%;
+}
+
+.subtitulo-razao {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+    margin-bottom: 25px;
+
+    color: #bd5c35;
+
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.subtitulo-razao span {
+    width: 25px;
+    height: 2px;
+
+    background-color: #bd5c35;
+}
+
+.cont-razao-esq h2 {
+    color: #292522;
+
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+
+/* =========================
+   LADO DIREITO - LISTA DE LINKS
+========================= */
+
+.cont-razao-dir {
+    width: 70%;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.item-razao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 35px 0;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+
+    color: inherit;
+    text-decoration: none;
+    
+    transition: opacity 0.3s ease;
+}
+
+.item-razao:hover {
+    opacity: 0.8;
+}
+
+.textos-item-razao h3 {
+    margin-bottom: 8px;
+
+    color: #292522;
+
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.textos-item-razao p {
+    color: #756e68;
+
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.icone-seta-razao {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #292522;
+
+    transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o rato (hover) para dar destaque à seta */
+.item-razao:hover .icone-seta-razao {
+    background-color: #bd5c35;
+    border-color: #bd5c35;
+    color: #ffffff;
+}
+
+/* =========================
+   RESPONSIVIDADE BÁSICA
+========================= */
+
+@media (max-width: 900px) {
+    .secao-razao {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .cont-razao-esq, 
+    .cont-razao-dir {
+        width: 100%;
+    }
+}
+
+/* =========================
+   SECÇÃO FAÇA PARTE
+========================= */
+
+.secao-faca-parte {
+    width: 100%;
+    padding: 100px 5%;
+
+    background-color: #2c211d;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+
+/* =========================
+   LADO ESQUERDO - TEXTOS E BOTÃO
+========================= */
+
+.cont-parte-esq {
+    width: 40%;
+}
+
+.subtitulo-parte {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+    margin-bottom: 25px;
+
+    color: #f0a04b;
+
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.subtitulo-parte span {
+    width: 25px;
+    height: 2px;
+
+    background-color: #bd5c35;
+}
+
+.cont-parte-esq h2 {
+    margin-bottom: 25px;
+
+    color: #f5eee3;
+
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.cont-parte-esq p {
+    margin-bottom: 40px;
+
+    color: rgba(245, 238, 227, 0.7); /* Tom creme com transparência */
+
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.btn-comecar {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 28px;
+
+    background-color: #bd5c35;
+    color: #ffffff;
+    
+    border-radius: 30px;
+
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-comecar:hover {
+    background-color: #a94f2c;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   LADO DIREITO - LISTA (01 a 04)
+========================= */
+
+.cont-parte-dir {
+    width: 75%;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.item-parte {
+    display: flex;
+    align-items: center;
+
+    padding: 30px 0;
+
+    border-top: 1px solid rgba(245, 238, 227, 0.1);
+
+    color: inherit;
+    text-decoration: none;
+    
+    transition: background-color 0.3s ease;
+}
+
+/* Adiciona a linha de baixo apenas ao último item */
+.item-parte.ult {
+    border-bottom: 1px solid rgba(245, 238, 227, 0.1);
+}
+
+.item-parte:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.num-parte {
+    width: 50px;
+
+    color: #f0a04b;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.textos-item-parte {
+    flex: 1;
+}
+
+.textos-item-parte h3 {
+    margin-bottom: 6px;
+
+    color: #f5eee3;
+
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.textos-item-parte p {
+    color: rgba(245, 238, 227, 0.6);
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.icone-seta-parte {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+    border: 1px solid rgba(245, 238, 227, 0.2);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #f5eee3;
+
+    transition: all 0.3s ease;
+}
+
+/* Efeito no ícone ao passar o rato (hover) na linha */
+.item-parte:hover .icone-seta-parte {
+    background-color: #bd5c35;
+    border-color: #bd5c35;
+    color: #ffffff;
+}
+
+/* =========================
+   RESPONSIVIDADE BÁSICA
+========================= */
+
+@media (max-width: 950px) {
+    .secao-faca-parte {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 50px;
+        padding: 60px 5%;
+    }
+
+    .cont-parte-esq, 
+    .cont-parte-dir {
+        width: 100%;
+    }
+}
