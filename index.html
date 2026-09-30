@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 
     <title>Abrigo São Francisco</title>
 
@@ -18,12 +19,12 @@
     <header class="nav-bar">
 
         <div class="logo-container">
-            <img src="imagens/logotipo_abrogoSF.svg" class="logotipo" alt="Logo do Abrigo São Francisco">
+                <img src="imagens/logotipo_abrogoSF.svg" class="logotipo" alt="Logo do Abrigo São Francisco">
 
-            <p class="escritalogo">
-                <strong>Abrigo</strong>
-                <span>São Francisco</span>
-            </p>
+                <p class="escritalogo">
+                    <strong>Abrigo</strong>
+                    <span>São Francisco</span>
+                </p>
         </div>
 
         <nav class="navegacao">
@@ -37,6 +38,53 @@
         </nav>
 
     </header>
+
+    <!-- ==========================================
+   MODAL "QUERO AJUDAR"
+=========================================== -->
+<div class="modal-overlay" id="modal-ajuda">
+    <div class="modal-conteudo">
+        
+        <!-- Botão de Fechar -->
+        <button class="modal-fechar" id="fechar-modal" aria-label="Fechar">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+
+        <div class="modal-cabecalho">
+            <div class="subtitulo-padrao subtitulo-laranja">
+                <span></span> FAÇA A DIFERENÇA
+            </div>
+            <h2>Como você gostaria de ajudar?</h2>
+            <p>Escolha uma das opções abaixo para ser direcionado à área correspondente.</p>
+        </div>
+        
+        <div class="modal-opcoes">
+            
+            <!-- Opção Voluntariado -->
+            <!-- Nota: Altere o 'href' para o link exato da sua secção de voluntariado -->
+            <a href="projects.html" class="modal-opcao-card">
+                <div class="icone-circulo-modal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+                <h3>Ser Voluntário</h3>
+                <p>Doe seu tempo e habilidades para apoiar as nossas causas e atividades diárias.</p>
+                <span class="link-laranja-fino">Quero ser voluntário &rarr;</span>
+            </a>
+
+            <!-- Opção Doação -->
+            <!-- Nota: Altere o 'href' para o link exato da sua secção de doação -->
+            <a href="projects.html#doacoes" class="modal-opcao-card">
+                <div class="icone-circulo-modal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                </div>
+                <h3>Fazer uma Doação</h3>
+                <p>Contribua financeiramente para sustentar o abrigo e as campanhas ativas.</p>
+                <span class="link-laranja-fino">Quero doar &rarr;</span>
+            </a>
+
+        </div>
+    </div>
+</div>
 
     <main>
 
@@ -367,7 +415,189 @@
 
 </section>
 
-</main>
-</body>
+<!-- =========================
+   SECÇÃO EVENTOS
+========================= -->
+<section class="secao-eventos">
+    <div class="banner-eventos">
+        <div class="conteudo-banner">
+            <div class="subtitulo-banner">
+                <span></span> EVENTOS
+            </div>
+            <h2>Encontros que aproximam o abrigo da cidade.</h2>
+        </div>
+        
+        <a href="#" class="link-banner">
+            Agenda e ações abertas
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </a>
+    </div>
+</section>
 
+<!-- =========================
+   SECÇÃO GALERIA
+========================= -->
+<section class="secao-galeria">
+    
+    <div class="header-galeria">
+        <div class="subtitulo-galeria">
+            <span></span> GALERIA
+        </div>
+        <h2>Destaques.</h2>
+    </div>
+
+    <!-- Grid de Fotos -->
+    <div class="grid-galeria">
+        <!-- Substitua os src pelos caminhos reais das suas imagens -->
+        <img src="imagens/foto cachorro deitado.jpeg" alt="Cão no abrigo" class="img-galeria">
+        <img src="imagens/foto 2 secao apoio.jpeg" alt="Cão focado" class="img-galeria">
+        <img src="imagens/foto cachorro sol.jpeg" alt="Cão preto a sorrir" class="img-galeria">
+        <img src="imagens/foto deitado chão.jpeg" alt="Cão deitado" class="img-galeria">
+    </div>
+
+    <!-- Rodapé da Galeria -->
+    <div class="rodape-galeria">
+        <p>Um pouco do que acontece por aqui.</p>
+        <a href="#" class="link-rodape-galeria">Acesse a Galeria &rarr;</a>
+    </div>
+
+</section>
+
+<!-- =========================
+   SECÇÃO INFORMAÇÃO PRÁTICA
+========================= -->
+<section class="secao-informacao">
+    
+    <div class="header-informacao">
+        <div class="subtitulo-informacao">
+            <span></span> INFORMAÇÃO PRÁTICA
+        </div>
+        <h2>Continue perto.</h2>
+    </div>
+
+    <div class="grid-informacao">
+        
+        <!-- Card FAQ -->
+        <div class="card-info">
+            <div class="icone-info">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            </div>
+            <h3>FAQ</h3>
+            <p>Respostas diretas para adoção, doação e visitas.</p>
+        </div>
+
+        <!-- Card Newsletter -->
+        <div class="card-info">
+            <div class="icone-info">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <h3>Newsletter</h3>
+            <p>Notícias do abrigo, histórias e formas de participar.</p>
+        </div>
+
+        <!-- Card Localização -->
+        <div class="card-info">
+            <div class="icone-info">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <h3>Localização</h3>
+            <p>Endereço, horários e orientações para chegar.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+   SECÇÃO CALL TO ACTION (CTA)
+========================= -->
+<section class="secao-cta">
+    
+    <div class="cta-esq">
+        <div class="subtitulo-cta">
+            UM GESTO ABRE CAMINHO
+        </div>
+        <h2>Ajude a tornar o próximo recomeço possível.</h2>
+    </div>
+
+    <div class="cta-dir">
+        <p>Sua participação sustenta proteção, cuidado e encontros que transformam vidas.</p>
+        <a href="#" class="btn-apoiar">
+            Apoiar o Abrigo
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        </a>
+    </div>
+
+</section>
+</main>
+
+<!-- =========================
+   RODAPÉ (FOOTER)
+========================= -->
+<footer class="rodape-site">
+    <div class="conteudo-rodape">
+        
+        <!-- Coluna da Marca (Esquerda) -->
+        <div class="coluna-marca">
+            <div class="logo-rodape">
+                <!-- Substitua pelo SVG ou tag <img> com o logótipo real -->
+                <img src="imagens/logotipo_abrogoSF.svg" class="logotipo" alt="Logo do Abrigo São Francisco">
+            </div>
+            <h3>Abrigo<br><span>São Francisco</span></h3>
+            <p>Acolhimento, proteção, cuidado<br>e adoção responsável.</p>
+        </div>
+
+        <!-- Colunas de Links (Direita) -->
+        <div class="colunas-links">
+            
+            <div class="coluna-nav">
+                <h4>INSTITUCIONAL</h4>
+                <ul>
+                    <li><a href="#">Nossa história</a></li>
+                    <li><a href="#">Transparência</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="coluna-nav">
+                <h4>PARTICIPE</h4>
+                <ul>
+                    <li><a href="#">Adote</a></li>
+                    <li><a href="#">Doe</a></li>
+                    <li><a href="projects.html">Seja voluntário</a></li>
+                </ul>
+            </div>
+
+            <div class="coluna-nav">
+                <h4>ENCONTRE</h4>
+                <ul>
+                    <li><a href="#">Endereço e horários</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">E-mail</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Linha Divisória -->
+    <div class="linha-divisoria-rodape"></div>
+
+    <!-- Rodapé Inferior -->
+    <div class="rodape-inferior">
+        <p>&copy; Abrigo São Francisco &middot; Cuidado que transforma.</p>
+        
+        <div class="links-inferiores">
+            <a href="#">Privacidade</a>
+            <a href="#">Termos</a>
+            <!-- Botão de Voltar ao Topo -->
+            <a href="#" class="btn-voltar-topo" aria-label="Voltar ao topo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+            </a>
+        </div>
+    </div>
+</footer>
+
+</body>
 </html>

@@ -1276,3 +1276,790 @@ main {
         width: 100%;
     }
 }
+
+/* =========================
+   SECÇÃO EVENTOS
+========================= */
+
+.secao-eventos {
+    width: 100%;
+    padding: 60px 5% 20px; /* Padding superior ajustado para o espaçamento */
+    
+    background-color: #f5eee3; /* Fundo base da página */
+}
+
+.banner-eventos {
+    width: 100%;
+    padding: 50px;
+    
+    /* Tom mostarda/laranja escuro baseado no design */
+    background-color: #d28639; 
+    border-radius: 50px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    min-height: 280px;
+}
+
+.subtitulo-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+
+    color: #292522;
+
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.subtitulo-banner span {
+    width: 20px;
+    height: 1px;
+    
+    background-color: #292522;
+}
+
+.conteudo-banner h2 {
+    max-width: 650px;
+
+    color: #292522;
+
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.link-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    
+    margin-top: 40px;
+
+    color: #292522;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+    
+    transition: opacity 0.3s ease;
+}
+
+.link-banner:hover {
+    opacity: 0.7;
+}
+
+
+/* =========================
+   SECÇÃO GALERIA
+========================= */
+
+.secao-galeria {
+    width: 100%;
+    padding: 60px 5% 100px; /* Margem inferior mais ampla */
+    
+    background-color: #f5eee3;
+}
+
+.header-galeria {
+    margin-bottom: 40px;
+}
+
+.subtitulo-galeria {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    color: #bd5c35; /* Laranja da paleta principal */
+
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.subtitulo-galeria span {
+    width: 25px;
+    height: 2px;
+    
+    background-color: #bd5c35;
+}
+
+.header-galeria h2 {
+    color: #292522;
+
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+
+/* =========================
+   GRID DE FOTOS
+========================= */
+
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; /* Espaço estreito entre as imagens */
+    
+    margin-bottom: 45px;
+}
+
+.img-galeria {
+    width: 100%;
+    height: 480px; /* Imagens em formato retrato (verticais) */
+    
+    object-fit: cover;
+}
+
+
+/* =========================
+   RODAPÉ DA GALERIA
+========================= */
+
+.rodape-galeria {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rodape-galeria p {
+    color: #292522;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.link-rodape-galeria {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #292522;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+    
+    transition: color 0.3s ease;
+}
+
+.link-rodape-galeria:hover {
+    color: #bd5c35;
+}
+
+
+/* =========================
+   RESPONSIVIDADE BÁSICA
+========================= */
+
+@media (max-width: 950px) {
+    .grid-galeria {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .img-galeria {
+        height: 350px;
+    }
+    
+    .rodape-galeria {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-galeria {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   SECÇÃO INFORMAÇÃO PRÁTICA
+========================= */
+
+.secao-informacao {
+    width: 100%;
+    padding: 80px 5%;
+
+    background-color: #f5eee3;
+}
+
+.header-informacao {
+    margin-bottom: 40px;
+}
+
+.subtitulo-informacao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    color: #bd5c35;
+
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.subtitulo-informacao span {
+    width: 25px;
+    height: 2px;
+
+    background-color: #bd5c35;
+}
+
+.header-informacao h2 {
+    color: #292522;
+
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+
+/* =========================
+   GRID DE CARDS (INFORMAÇÃO)
+========================= */
+
+.grid-informacao {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card-info {
+    padding: 40px 30px;
+
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+
+    background-color: transparent;
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+}
+
+.icone-info {
+    width: 45px;
+    height: 45px;
+
+    margin-bottom: 25px;
+
+    border-radius: 50%;
+    background-color: rgba(189, 92, 53, 0.15);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #bd5c35;
+}
+
+.card-info h3 {
+    margin-bottom: 12px;
+
+    color: #292522;
+
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.card-info p {
+    color: #756e68;
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   SECÇÃO CALL TO ACTION (CTA)
+========================= */
+
+.secao-cta {
+    width: 100%;
+    padding: 100px 5%;
+
+    background-color: #bd5c35;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.cta-esq {
+    width: 55%;
+}
+
+.subtitulo-cta {
+    margin-bottom: 20px;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cta-esq h2 {
+    color: #f5eee3;
+
+    font-size: 54px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.cta-dir {
+    width: 40%;
+    max-width: 400px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cta-dir p {
+    margin-bottom: 30px;
+
+    color: rgba(245, 238, 227, 0.85);
+
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.btn-apoiar {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 16px 32px;
+
+    background-color: #2c211d; /* Castanho escuro */
+    color: #ffffff;
+    
+    border-radius: 40px;
+
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-apoiar:hover {
+    background-color: #1a1311;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   RESPONSIVIDADE BÁSICA
+========================= */
+
+@media (max-width: 950px) {
+    .grid-informacao {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .secao-cta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+        padding: 60px 5%;
+    }
+    
+    .cta-esq, .cta-dir {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .cta-esq h2 {
+        font-size: 40px;
+    }
+}
+
+/* =========================
+   RODAPÉ (FOOTER)
+========================= */
+
+.rodape-site {
+    width: 100%;
+    padding: 80px 5% 30px;
+    
+    background-color: #2c211d;
+    color: #f5eee3;
+}
+
+.conteudo-rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+
+/* =========================
+   COLUNA DA MARCA / LOGO
+========================= */
+
+.coluna-marca {
+    width: 30%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.logo-rodape {
+    margin-bottom: 15px;
+}
+
+.coluna-marca h3 {
+    margin-bottom: 15px;
+    
+    color: #ffffff;
+    
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.coluna-marca h3 span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.coluna-marca p {
+    color: rgba(245, 238, 227, 0.7);
+    
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   COLUNAS DE LINKS DE NAVEGAÇÃO
+========================= */
+
+.colunas-links {
+    width: 60%;
+    
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.coluna-nav h4 {
+    margin-bottom: 25px;
+    
+    color: #f0a04b; /* Laranja da paleta principal */
+    
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.coluna-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.coluna-nav li {
+    margin-bottom: 16px;
+}
+
+.coluna-nav a {
+    color: rgba(245, 238, 227, 0.85);
+    text-decoration: none;
+    
+    font-size: 14px;
+    font-weight: 500;
+    
+    transition: color 0.3s ease;
+}
+
+.coluna-nav a:hover {
+    color: #f0a04b;
+}
+
+
+/* =========================
+   DIVISÓRIA E RODAPÉ INFERIOR
+========================= */
+
+.linha-divisoria-rodape {
+    width: 100%;
+    height: 1px;
+    
+    margin: 60px 0 30px;
+    
+    background-color: rgba(245, 238, 227, 0.08); /* Linha subtil */
+}
+
+.rodape-inferior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rodape-inferior p {
+    color: rgba(245, 238, 227, 0.6);
+    
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.links-inferiores {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.links-inferiores a {
+    color: rgba(245, 238, 227, 0.6);
+    text-decoration: none;
+    
+    font-size: 12px;
+    font-weight: 500;
+    
+    transition: color 0.3s ease;
+}
+
+.links-inferiores a:hover {
+    color: #ffffff;
+}
+
+.btn-voltar-topo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin-left: 10px;
+    
+    color: rgba(245, 238, 227, 0.8);
+}
+
+/* ==========================================================================
+   MODAL "QUERO AJUDAR"
+========================================================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(44, 33, 29, 0.85); /* Fundo castanho escuro translúcido */
+    z-index: 9999;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Escondido por padrão com animação */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Classe que será adicionada pelo JS para mostrar o modal */
+.modal-overlay.mostrar {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-conteudo {
+    position: relative;
+    background-color: #f5eee3; /* Cor creme padrão */
+    width: 90%;
+    max-width: 850px;
+    border-radius: 30px;
+    padding: 60px 50px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    
+    /* Efeito de zoom ao abrir */
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.mostrar .modal-conteudo {
+    transform: scale(1);
+}
+
+.modal-fechar {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: none;
+    border: none;
+    color: #292522;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.modal-fechar:hover {
+    background-color: #bd5c35;
+    color: #ffffff;
+}
+
+.modal-cabecalho {
+    text-align: center;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-cabecalho h2 {
+    color: #292522;
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 15px;
+}
+
+.modal-cabecalho p {
+    color: #756e68;
+    font-size: 16px;
+    max-width: 500px;
+    margin: 0;
+}
+
+.modal-opcoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.modal-opcao-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.05);
+    text-decoration: none;
+    color: #292522;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-opcao-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.icone-circulo-modal {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #f5eee3;
+    color: #bd5c35;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.modal-opcao-card:hover .icone-circulo-modal {
+    background-color: #bd5c35;
+    color: #ffffff;
+}
+
+.modal-opcao-card h3 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.modal-opcao-card p {
+    color: #756e68;
+    font-size: 15px;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+/* Responsividade do Modal */
+@media (max-width: 768px) {
+    .modal-opcoes {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-conteudo {
+        padding: 40px 30px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    
+    .modal-cabecalho h2 {
+        font-size: 28px;
+    }
+}
+
+/* =========================
+   RESPONSIVIDADE BÁSICA
+========================= */
+
+@media (max-width: 900px) {
+    .conteudo-rodape {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .coluna-marca {
+        width: 100%;
+    }
+
+    .colunas-links {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .coluna-nav {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+
+    .rodape-inferior {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .coluna-nav {
+        width: 100%;
+        text-align: center;
+    }
+}

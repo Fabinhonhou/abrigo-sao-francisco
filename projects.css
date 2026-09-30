@@ -1,0 +1,1223 @@
+/* ==========================================================================
+   VARIÁVEIS E GLOBAIS (Adicione ao topo do seu ficheiro CSS)
+========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --cor-creme: #f5eee3;
+    --cor-laranja: #bd5c35;
+    --cor-laranja-hover: #a94f2c;
+    --cor-escuro: #2c211d;
+    --cor-branco: #ffffff;
+    --cor-texto-escuro: #292522;
+    --cor-texto-cinza: #756e68;
+}
+
+body {
+    background-color: var(--cor-creme);
+    font-family: 'Nunito', sans-serif;
+    color: var(--cor-texto-escuro);
+    margin: 0; padding: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.nav-bar {
+    width: 100%;
+    height: 95px;
+
+    padding: 0 65px;
+
+    background-color: #F3ECE1;
+
+    display: flex;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+}
+
+/* =========================
+   LOGO E TEXTOS
+========================= */
+
+.logo-container {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.logotipo {
+    width: 65px;
+    height: auto;
+
+    display: block;
+}
+
+.escritalogo {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+
+    color: #2C221E;
+
+    font-family: 'Nunito', sans-serif;
+
+    line-height: 1.1;
+}
+
+.escritalogo strong {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.escritalogo span {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* =========================
+   ÁREAS DE NAVEGAÇÃO
+========================= */
+
+.navegacao {
+    display: flex;
+    align-items: center;
+
+    margin-left: auto;
+}
+
+.abas-nav {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.abas-nav li {
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+.abas-nav a {
+    color: #292522;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition: color 0.3s ease;
+}
+
+.abas-nav a:hover {
+    color: #bd5c35;
+}
+
+
+/* =========================
+   BOTÃO "QUERO AJUDAR"
+========================= */
+
+.ajudar-button {
+    background-color: #bd5c35;
+
+    color: #ffffff !important;
+
+    padding: 13px 22px;
+
+    border-radius: 30px;
+
+    font-size: 15px !important;
+    font-weight: 600 !important;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.ajudar-button:hover {
+    background-color: #a94f2c;
+
+    transform: translateY(-2px);
+}
+
+
+
+
+/* Utilitários */
+.creme { background-color: var(--cor-creme); }
+.escuro { background-color: var(--cor-escuro); color: var(--cor-branco); }
+.laranja { background-color: var(--cor-laranja); color: var(--cor-branco); }
+.mt-20 { margin-top: 20px; } .mt-30 { margin-top: 30px; } .w-100 { width: 100%; justify-content: center;}
+
+/* Tipografia Base */
+.subtitulo-padrao {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; font-weight: 800; text-transform: uppercase; margin-bottom: 20px;
+}
+.subtitulo-padrao span { width: 25px; height: 2px; }
+.subtitulo-escuro { color: var(--cor-laranja); } .subtitulo-escuro span { background-color: var(--cor-laranja); }
+.subtitulo-claro { color: rgba(255,255,255,0.8); } .subtitulo-claro span { background-color: rgba(255,255,255,0.8); }
+.subtitulo-laranja { color: var(--cor-laranja); } .subtitulo-laranja span { background-color: var(--cor-laranja); }
+
+h1 { font-size: 72px; font-weight: 800; line-height: 1.1; letter-spacing: -2px; margin-bottom: 20px; }
+h2 { font-size: 46px; font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin-bottom: 20px; }
+h3 { font-size: 28px; font-weight: 800; margin-bottom: 15px; }
+h4 { font-size: 20px; font-weight: 800; margin-bottom: 15px; }
+p { font-size: 16px; line-height: 1.6; color: var(--cor-texto-cinza); margin-bottom: 30px; }
+
+.escuro h2, .escuro h4, .laranja h2, .laranja h4 { color: var(--cor-branco); }
+.escuro p { color: rgba(245, 238, 227, 0.7); }
+
+/* ==========================================================================
+   BOTÕES E HOVERS
+========================================================================== */
+.btn-primario, .btn-laranja-solido {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 28px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 16px;
+    background-color: var(--cor-laranja); color: var(--cor-branco);
+    border: none; cursor: pointer; transition: all 0.3s ease;
+    margin-top: 20px;
+}
+.btn-primario:hover, .btn-laranja-solido:hover {
+    background-color: var(--cor-laranja-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(189, 92, 53, 0.3);
+}
+
+.btn-creme, .btn-secundario-claro {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 28px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 16px;
+    background-color: var(--cor-creme); color: var(--cor-texto-escuro);
+    border: none; cursor: pointer; transition: all 0.3s ease;
+    margin-top: 20px;
+}
+.btn-creme:hover, .btn-secundario-claro:hover {
+    background-color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn-link, .btn-link-claro {
+    display: inline-flex; align-items: center; gap: 8px; font-weight: 700; text-decoration: none; font-size: 16px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.btn-link { color: var(--cor-texto-escuro); }
+.btn-link-claro { color: var(--cor-branco); }
+.btn-link:hover, .btn-link-claro:hover {
+    opacity: 0.7;
+    transform: translateX(5px);
+}
+
+/* ==========================================================================
+   MODAL "QUERO AJUDAR"
+========================================================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(44, 33, 29, 0.85); /* Fundo castanho escuro translúcido */
+    z-index: 9999;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Escondido por padrão com animação */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Classe que será adicionada pelo JS para mostrar o modal */
+.modal-overlay.mostrar {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-conteudo {
+    position: relative;
+    background-color: #f5eee3; /* Cor creme padrão */
+    width: 90%;
+    max-width: 850px;
+    border-radius: 30px;
+    padding: 60px 50px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    
+    /* Efeito de zoom ao abrir */
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.mostrar .modal-conteudo {
+    transform: scale(1);
+}
+
+.modal-fechar {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: none;
+    border: none;
+    color: #292522;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.modal-fechar:hover {
+    background-color: #bd5c35;
+    color: #ffffff;
+}
+
+.modal-cabecalho {
+    text-align: center;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-cabecalho h2 {
+    color: #292522;
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 15px;
+}
+
+.modal-cabecalho p {
+    color: #756e68;
+    font-size: 16px;
+    max-width: 500px;
+    margin: 0;
+}
+
+.modal-opcoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.modal-opcao-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.05);
+    text-decoration: none;
+    color: #292522;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-opcao-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.icone-circulo-modal {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #f5eee3;
+    color: #bd5c35;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.modal-opcao-card:hover .icone-circulo-modal {
+    background-color: #bd5c35;
+    color: #ffffff;
+}
+
+.modal-opcao-card h3 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.modal-opcao-card p {
+    color: #756e68;
+    font-size: 15px;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+/* Responsividade do Modal */
+@media (max-width: 768px) {
+    .modal-opcoes {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-conteudo {
+        padding: 40px 30px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    
+    .modal-cabecalho h2 {
+        font-size: 28px;
+    }
+}
+
+/* ==========================================================================
+   IMAGENS DE FUNDO (Insira os links reais aqui)
+========================================================================== */
+.bg-img-voluntariado-1 { background-image: url('imagens/foto 1 secao apoio.jpeg'); }
+.bg-img-voluntariado-2 { background-image: url('imagens/foto 5 secao apoio.jpeg'); }
+.bg-img-voluntariado-3 { background-image: url('imagens/foto homem segurando cachorro.jpeg'); }
+
+.bg-camp-1 { background-image: url('imagens/campanha 1.jpeg'); }
+.bg-camp-2 { background-image: url('imagens/campanha 2.jpeg'); }
+
+/* ==========================================================================
+   CARDS DE IMAGEM COM OVERLAY
+========================================================================== */
+.card-imagem {
+    position: relative; height: 380px; border-radius: 20px; overflow: hidden;
+    background-size: cover; background-position: center;
+    padding: 24px; color: var(--cor-branco);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.card-imagem:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+.card-imagem:hover .link-seta {
+    transform: translateX(5px);
+}
+.overlay-gradiente-laranja {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(180deg, rgba(217, 102, 39, 0.6) 0%, rgba(184, 69, 21, 0.95) 100%);
+    z-index: 1; transition: opacity 0.3s ease;
+}
+.card-imagem:hover .overlay-gradiente-laranja {
+    opacity: 0.9;
+}
+.conteudo-card-img {
+    position: relative; z-index: 2; height: 100%;
+    display: flex; flex-direction: column; justify-content: space-between;
+}
+.topo-card { display: flex; justify-content: space-between; align-items: center; }
+.icone-bola {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(4px);
+    display: flex; align-items: center; justify-content: center;
+}
+.base-card h3 { font-size: 22px; margin-bottom: 10px; color: var(--cor-branco);}
+.base-card p { font-size: 14px; margin-bottom: 15px; color: rgba(255,255,255,0.9);}
+.link-seta { font-weight: 700; font-size: 14px; display: inline-flex; align-items: center; gap: 5px; transition: transform 0.3s ease;}
+
+/* ==========================================================================
+   BANNER OPORTUNIDADE LARGA (Hover e Efeitos)
+========================================================================== */
+.banner-oportunidade-larga {
+    display: block; background-color: #d28639; border-radius: 10px 30px; padding: 40px; 
+    color: var(--cor-escuro); position: relative; text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.banner-oportunidade-larga:hover {
+    transform: translateY(-5px);
+    background-color: #c97e33;
+}
+.banner-oportunidade-larga h3 { color: var(--cor-escuro); margin-bottom: 30px;}
+.info-oportunidade { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.info-oportunidade p { color: var(--cor-escuro); font-size: 15px; margin-bottom: 10px;}
+.link-canto { position: absolute; bottom: 40px; right: 40px; font-weight: 800; transition: transform 0.3s ease;}
+.banner-oportunidade-larga:hover .link-canto { transform: translate(3px, -3px); }
+
+/* ==========================================================================
+   CARDS DE CAMPANHA (Com Progresso)
+========================================================================== */
+.card-campanha {
+    background-color: var(--cor-branco); border-radius: 30px; overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-campanha:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+.img-campanha { width: 100%; height: 300px; background-size: cover; background-position: 10% 10%;}
+.conteudo-campanha { padding: 40px; }
+.conteudo-campanha h4 { color: var(--cor-texto-escuro); margin-bottom: 15px;}
+.stats-campanha { margin-bottom: 30px; }
+.linha-stat { display: flex; justify-content: space-between; font-size: 13px; color: var(--cor-texto-cinza); margin-bottom: 10px;}
+.linha-stat strong { color: var(--cor-texto-escuro); font-size: 15px;}
+progress { width: 100%; height: 8px; border-radius: 4px; border: none; background-color: var(--cor-creme); }
+progress::-webkit-progress-value { background-color: var(--cor-laranja); border-radius: 4px;}
+progress::-webkit-progress-bar { background-color: var(--cor-creme); border-radius: 4px;}
+.botoes-campanha { display: flex; gap: 15px; }
+
+/* ==========================================================================
+   FORMULÁRIO DE DOAÇÕES (Interações)
+========================================================================== */
+.card-branco-sombra { background-color: var(--cor-branco); padding: 50px; border-radius: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.05);}
+.opcoes-valor { display: flex; flex-wrap: wrap; gap: 15px; }
+.btn-valor {
+    padding: 12px 24px; border-radius: 30px; border: 2px solid var(--cor-creme); 
+    background-color: var(--cor-creme); font-weight: 700; color: var(--cor-texto-escuro); 
+    cursor: pointer; transition: all 0.2s ease;
+}
+.btn-valor:hover { border-color: var(--cor-laranja); color: var(--cor-laranja); background-color: var(--cor-branco);}
+.btn-valor.ativo { background-color: var(--cor-laranja); color: var(--cor-branco); border-color: var(--cor-laranja);}
+
+.opcoes-tipo { display: flex; gap: 20px; }
+.radio-box {
+    display: flex; align-items: center; gap: 10px; padding: 15px 25px; border-radius: 15px; 
+    background-color: var(--cor-creme); border: 2px solid transparent; cursor: pointer; 
+    font-weight: 700; font-size: 14px; transition: all 0.2s ease;
+}
+.radio-box:hover { border-color: rgba(189, 92, 53, 0.5); }
+.radio-box.ativo { border-color: var(--cor-laranja); background-color: var(--cor-branco);}
+.radio-box input[type="radio"] { accent-color: var(--cor-laranja); transform: scale(1.2);}
+
+/* ==========================================================================
+   OUTROS ESTILOS DA PÁGINA (Layouts)
+========================================================================== */
+.seccao-hero-projetos { padding: 150px 5% 100px; }
+.cont-hero { max-width: 700px; }
+.botoes-hero { display: flex; align-items: center; gap: 30px; margin-top: 40px; }
+
+.seccao-opcoes-contribuicao { background-color: var(--cor-laranja); padding: 100px 5%; color: var(--cor-branco); }
+.cabecalho-opcoes { margin-bottom: 60px; text-align: center; display: flex; flex-direction: column; align-items: center;}
+.texto-apoio-claro { font-size: 11px; font-weight: 800; letter-spacing: 1px; color: rgba(255,255,255,0.7); margin-top: 20px;}
+.grid-duas-colunas { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.linha-topo-opcao { display: flex; align-items: center; gap: 15px; font-weight: 800; margin-bottom: 30px; color: var(--cor-branco);}
+.linha-topo-opcao span { flex: 1; height: 1px; background-color: rgba(255,255,255,0.3); }
+
+.seccao-oportunidades { padding: 100px 5%; }
+.cabecalho-padrao { max-width: 800px; margin-bottom: 60px; }
+.grid-cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 30px; }
+.alinhamento-direita { text-align: right; margin-bottom: 60px; }
+
+/* ==========================================================================
+   SECÇÃO: COMO PARTICIPAR DO VOLUNTARIADO (CORRIGIDA)
+========================================================================== */
+
+.seccao-como-participar-fixa {
+    width: 100%;
+    padding: 100px 5%;
+    
+    background-color: #2c211d; /* Fundo escuro */
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Mantém a coluna da esquerda fixa no topo, sem arrastar a página */
+    gap: 60px;
+}
+
+/* --- Lado Esquerdo --- */
+.coluna-esq-participar {
+    width: 40%;
+}
+
+.coluna-esq-participar h2 {
+    color: #ffffff;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+
+.coluna-esq-participar p {
+    color: rgba(245, 238, 227, 0.7);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 450px;
+}
+
+/* --- Lado Direito --- */
+.coluna-dir-participar {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-passo-voluntariado {
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
+    
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.item-passo-voluntariado:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+    transform: translateX(5px);
+}
+
+.num-passo {
+    width: 50px;
+    color: #bd5c35; /* Laranja */
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.textos-passo {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.textos-passo h3 {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+
+.textos-passo p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.icone-seta-descer {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    color: #ffffff;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o rato (hover) na linha inteira */
+.item-passo-voluntariado:hover .icone-seta-descer {
+    border-color: #bd5c35;
+    background-color: #bd5c35;
+    color: #ffffff;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 950px) {
+    .seccao-como-participar-fixa {
+        flex-direction: column;
+        gap: 50px;
+    }
+    
+    .coluna-esq-participar,
+    .coluna-dir-participar {
+        width: 100%;
+    }
+    
+    .coluna-esq-participar p {
+        max-width: 100%;
+    }
+}
+
+.seccao-campanhas { padding: 100px 5%; }
+.grid-cards-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+
+.bloco-doacoes { padding: 100px 5%; display: flex; gap: 60px; align-items: flex-start;}
+
+/* ==========================================================================
+   SECÇÃO 5: ÁREA DO VOLUNTÁRIO (CARDS INTERATIVOS)
+========================================================================== */
+.seccao-area-voluntario { padding: 100px 5%; }
+.grid-cards-2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+
+.card-branco-interativo {
+    background-color: var(--cor-branco); padding: 40px; border-radius: 20px; 
+    border: 1px solid rgba(0,0,0,0.05); text-decoration: none; color: var(--cor-texto-escuro);
+    display: flex; flex-direction: column; justify-content: flex-start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-branco-interativo:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+.topo-card-branco { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+.icone-circulo {
+    width: 45px; height: 45px; border-radius: 50%; background-color: var(--cor-creme); 
+    display: flex; align-items: center; justify-content: center; color: var(--cor-texto-escuro);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.card-branco-interativo:hover .icone-circulo {
+    background-color: var(--cor-laranja); color: var(--cor-branco);
+}
+.card-branco-interativo h4 { margin-bottom: 15px; }
+.card-branco-interativo p { font-size: 15px; margin-bottom: 25px; flex-grow: 1;}
+.link-laranja-fino { 
+    color: var(--cor-laranja); font-weight: 700; font-size: 14px; 
+    display: inline-flex; align-items: center; gap: 5px; transition: transform 0.3s ease;
+}
+.card-branco-interativo:hover .link-laranja-fino { transform: translateX(5px); }
+
+.bloco-rodape-voluntario { margin-top: 80px; padding-top: 60px; border-top: 1px solid rgba(0,0,0,0.08); }
+.bloco-rodape-voluntario h4 { margin-bottom: 10px; }
+
+/* ==========================================================================
+   SECÇÃO 6: CERTIFICADOS DIGITAIS (MOCKUP)
+========================================================================== */
+.seccao-certificados { padding: 0 5% 100px; display: flex; align-items: center; justify-content: space-between; gap: 60px;}
+.texto-certificados { width: 45%; }
+.grafismo-certificado { width: 50%; display: flex; flex-direction: column; align-items: flex-start; gap: 30px;}
+
+.mockup-certificado { 
+    width: 100%; max-width: 450px; background-color: var(--cor-branco); 
+    border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+.mockup-certificado:hover { transform: scale(1.02); }
+
+.topo-mockup { background-color: var(--cor-laranja); padding: 30px; display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,0.5);}
+.mockup-certificado h4 { padding: 30px 30px 20px; margin: 0; color: var(--cor-laranja);}
+
+.linhas-mockup { padding: 0 30px 40px; }
+.linhas-mockup div[class^="linha-"] { height: 8px; background-color: var(--cor-creme); border-radius: 4px; margin-bottom: 12px; }
+.linhas-mockup .linha-1 { width: 100%; } 
+.linhas-mockup .linha-2 { width: 60%; } 
+.linhas-mockup .linha-3 { width: 40%; margin-bottom: 30px;}
+.pontos-mockup { display: flex; justify-content: space-between; border-top: 1px solid var(--cor-creme); padding-top: 20px;}
+.pontos-mockup span { width: 6px; height: 6px; border-radius: 50%; background-color: var(--cor-laranja); }
+
+/* ==========================================================================
+   SECÇÃO 9: RECURSOS E TRANSPARÊNCIA (CARDS)
+========================================================================== */
+.bloco-recursos { padding: 100px 5%; }
+.bloco-transparencia { padding: 100px 5%; }
+.texto-branco-opaco { color: rgba(255,255,255,0.85); max-width: 600px;}
+.grid-cards-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
+
+.card-branco { 
+    background-color: var(--cor-branco); padding: 35px 25px; border-radius: 20px; 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column;
+}
+
+/* Agrupamos card-alto e card-alto-link para terem a mesma altura */
+.card-alto, .card-alto-link { min-height: 280px; }
+
+/* Removemos o azul padrão do link e definimos a cor base do texto */
+.card-alto-link { 
+    text-decoration: none; 
+    color: var(--cor-texto-escuro); /* Remove o azul */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* Agrupamos h4 e p para funcionarem perfeitamente em ambos os tipos de cards */
+.card-alto h4, .card-alto-link h4 { 
+    margin: 20px 0 15px; 
+    color: var(--cor-texto-escuro); 
+    font-size: 22px;
+}
+
+.card-alto p, .card-alto-link p { 
+    font-size: 14px; 
+    margin: 0; 
+    color: var(--cor-texto-cinza); /* Garante que o parágrafo no link não fica azul */
+}
+
+/* Efeitos de Hover para os Cards com Links na Transparência */
+.card-alto-link:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08); 
+}
+
+.mt-auto { margin-top: auto; padding-top: 20px; }
+
+.card-alto-link:hover .link-laranja-fino { 
+    transform: translateX(5px); 
+}
+
+/* ==========================================================================
+   SECÇÃO 10: FAQ (PERGUNTAS FREQUENTES E ACCORDION)
+========================================================================== */
+.seccao-faq { padding: 100px 5%; }
+.lista-faq { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px;}
+
+.faq-item { border-bottom: 1px solid rgba(255,255,255,0.1); padding: 30px 0; transition: background-color 0.3s ease;}
+.faq-item:hover { background-color: rgba(255,255,255,0.02); }
+
+.faq-pergunta { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+.faq-pergunta h4 { margin: 0; font-size: 18px; color: var(--cor-branco); transition: color 0.3s ease;}
+
+.icone-faq { 
+    width: 35px; height: 35px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); 
+    display: flex; align-items: center; justify-content: center; color: var(--cor-branco); 
+    transition: all 0.3s ease; flex-shrink: 0; margin-left: 20px;
+}
+
+/* Ocultar respostas por padrão (caso vá usar JS depois, o CSS já está pronto) */
+.faq-resposta { display: none; margin-top: 20px; max-width: 800px;}
+.faq-resposta p { margin: 0; font-size: 15px; color: rgba(255,255,255,0.7); }
+
+/* Estados do item aberto */
+.faq-item.aberto .faq-resposta { display: block; animation: fadeIn 0.4s ease; }
+.faq-item.aberto .faq-pergunta h4 { color: var(--cor-laranja); }
+.faq-item.aberto .icone-faq { border-color: var(--cor-laranja); color: var(--cor-laranja); }
+.faq-item:hover .icone-faq { border-color: var(--cor-laranja); color: var(--cor-laranja); }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   SECÇÃO CTA: ESCOLHA COMO PARTICIPAR
+========================================================================== */
+.seccao-cta-participar {
+    padding: 100px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.cta-texto {
+    width: 65%;
+}
+
+.cta-subtitulo {
+    display: block;
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--cor-branco);
+}
+
+.seccao-cta-participar h2 {
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0;
+    color: var(--cor-branco);
+}
+
+.cta-botoes {
+    width: 30%;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.btn-escuro {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 16px 28px; border-radius: 30px; text-decoration: none; 
+    font-weight: 700; font-size: 15px;
+    background-color: var(--cor-escuro); color: var(--cor-branco);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    white-space: nowrap;
+    margin-top: 20px;
+}
+
+.btn-escuro:hover {
+    background-color: #1a1311;
+    transform: translateY(-3px);
+}
+
+
+/* ==========================================================================
+   SECÇÃO: ACOMPANHE O PROGRESSO (CARD DETALHADO)
+========================================================================== */
+.seccao-progresso-detalhe {
+    padding: 100px 5%;
+}
+
+.texto-cinza-claro {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    max-width: 700px;
+}
+
+.card-indicadores {
+    background-color: var(--cor-branco);
+    border-radius: 30px;
+    padding: 50px;
+    margin-top: 50px;
+}
+
+.titulo-indicadores {
+    color: var(--cor-laranja);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.grid-indicadores {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.indicador-item {
+    background-color: var(--cor-creme);
+    padding: 30px 25px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.indicador-label {
+    font-size: 13px;
+    color: var(--cor-texto-cinza);
+    font-weight: 600;
+}
+
+.indicador-valor {
+    font-size: 32px;
+    color: var(--cor-texto-escuro);
+    font-weight: 800;
+}
+
+/* Barra de Progresso Desenhada com DIVs (Para cantos redondos exatos) */
+.barra-progresso-container {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.barra-fundo {
+    width: 100%;
+    height: 12px;
+    background-color: var(--cor-creme);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.barra-preenchimento {
+    height: 100%;
+    background-color: var(--cor-laranja);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.rodape-indicadores {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.texto-meta {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--cor-texto-escuro);
+}
+
+
+/* ==========================================================================
+   RESPONSIVIDADE DAS DUAS SECÇÕES
+========================================================================== */
+@media (max-width: 1100px) {
+    .seccao-cta-participar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .cta-texto, .cta-botoes {
+        width: 100%;
+    }
+    
+    .cta-botoes {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    
+    .grid-indicadores {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .seccao-cta-participar h2 {
+        font-size: 28px;
+    }
+    
+    .grid-indicadores {
+        grid-template-columns: 1fr;
+    }
+    
+    .rodape-indicadores {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    .card-indicadores {
+        padding: 30px;
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE EXTRA (Para estas 4 secções)
+========================================================================== */
+@media (max-width: 1024px) {
+    .grid-cards-4 { grid-template-columns: repeat(2, 1fr); }
+    .seccao-certificados { flex-direction: column; align-items: flex-start; }
+    .texto-certificados, .grafismo-certificado { width: 100%; }
+}
+
+@media (max-width: 768px) {
+    .grid-cards-2x2, .grid-cards-4 { grid-template-columns: 1fr; }
+    .faq-pergunta h4 { font-size: 16px; }
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .grid-duas-colunas, .seccao-como-participar, .bloco-doacoes { flex-direction: column; }
+    .metade-esq, .metade-dir, .form-doacao { width: 100%; position: static;}
+    .grid-cards-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+    h1 { font-size: 48px; } h2 { font-size: 32px; }
+    .grid-cards-3, .grid-cards-2 { grid-template-columns: 1fr; }
+    .botoes-hero { flex-direction: column; align-items: flex-start; }
+}
+
+/* =========================
+   RODAPÉ (FOOTER)
+========================= */
+
+.rodape-site {
+    width: 100%;
+    padding: 80px 5% 30px;
+    
+    background-color: #2c211d;
+    color: #f5eee3;
+}
+
+.conteudo-rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+
+/* =========================
+   COLUNA DA MARCA / LOGO
+========================= */
+
+.coluna-marca {
+    width: 30%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.logo-rodape {
+    margin-bottom: 15px;
+}
+
+.coluna-marca h3 {
+    margin-bottom: 15px;
+    
+    color: #ffffff;
+    
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.coluna-marca h3 span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.coluna-marca p {
+    color: rgba(245, 238, 227, 0.7);
+    
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   COLUNAS DE LINKS DE NAVEGAÇÃO
+========================= */
+
+.colunas-links {
+    width: 60%;
+    
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.coluna-nav h4 {
+    margin-bottom: 25px;
+    
+    color: #f0a04b; /* Laranja da paleta principal */
+    
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.coluna-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.coluna-nav li {
+    margin-bottom: 16px;
+}
+
+.coluna-nav a {
+    color: rgba(245, 238, 227, 0.85);
+    text-decoration: none;
+    
+    font-size: 14px;
+    font-weight: 500;
+    
+    transition: color 0.3s ease;
+}
+
+.coluna-nav a:hover {
+    color: #f0a04b;
+}
+
+
+/* =========================
+   DIVISÓRIA E RODAPÉ INFERIOR
+========================= */
+
+.linha-divisoria-rodape {
+    width: 100%;
+    height: 1px;
+    
+    margin: 60px 0 30px;
+    
+    background-color: rgba(245, 238, 227, 0.08); /* Linha subtil */
+}
+
+.rodape-inferior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rodape-inferior p {
+    color: rgba(245, 238, 227, 0.6);
+    
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.links-inferiores {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.links-inferiores a {
+    color: rgba(245, 238, 227, 0.6);
+    text-decoration: none;
+    
+    font-size: 12px;
+    font-weight: 500;
+    
+    transition: color 0.3s ease;
+}
+
+.links-inferiores a:hover {
+    color: #ffffff;
+}
+
+.btn-voltar-topo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin-left: 10px;
+    
+    color: rgba(245, 238, 227, 0.8);
+}
+
+
+/* =========================
+   RESPONSIVIDADE BÁSICA
+========================= */
+
+@media (max-width: 900px) {
+    .conteudo-rodape {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .coluna-marca {
+        width: 100%;
+    }
+
+    .colunas-links {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .coluna-nav {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+
+    .rodape-inferior {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .coluna-nav {
+        width: 100%;
+        text-align: center;
+    }
+}
