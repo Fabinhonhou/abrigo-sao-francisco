@@ -1,36 +1,63 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Seleciona todos os botões com a classe .ajudar-button (seu botão da navbar)
+
+    // 1. MODAL "QUERO AJUDAR"
     const botoesAbrir = document.querySelectorAll('.ajudar-button');
     const modal = document.getElementById('modal-ajuda');
     const botaoFechar = document.getElementById('fechar-modal');
 
-    // Função para abrir o modal
     function abrirModal(event) {
-        event.preventDefault(); // Evita que o link salte a página se for uma tag <a>
-        modal.classList.add('mostrar');
-        document.body.style.overflow = 'hidden'; // Impede o scroll da página de fundo
+        event.preventDefault();
+        if (modal) {
+            modal.classList.add('mostrar');
+            document.body.style.overflow = 'hidden'; 
+        }
     }
 
-    // Função para fechar o modal
     function fecharModal() {
-        modal.classList.remove('mostrar');
-        document.body.style.overflow = ''; // Restaura o scroll
+        if (modal) {
+            modal.classList.remove('mostrar');
+            document.body.style.overflow = ''; 
+        }
     }
 
-    // Adiciona o evento de clique a todos os botões "Quero ajudar"
-    botoesAbrir.forEach(botao => {
-        botao.addEventListener('click', abrirModal);
+    botoesAbrir.forEach(botao => botao.addEventListener('click', abrirModal));
+    if (botaoFechar) botaoFechar.addEventListener('click', fecharModal);
+
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) fecharModal();
     });
 
-    // Fecha ao clicar no botão 'X'
-    if(botaoFechar) {
-        botaoFechar.addEventListener('click', fecharModal);
-    }
-
-    // Fecha ao clicar fora do conteúdo do modal (na área escura)
-    window.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            fecharModal();
+    // 2. FAQ (PERGUNTAS FREQUENTES)
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const pergunta = item.querySelector('.faq-pergunta');
+        if (pergunta) {
+            pergunta.addEventListener('click', () => {
+                const estaAberto = item.classList.contains('aberto');
+                faqItems.forEach(faq => faq.classList.remove('aberto'));
+                if (!estaAberto) item.classList.add('aberto');
+            });
         }
+    });
+
+    // 3. FORMULÁRIO DE DOAÇÕES
+    const botoesValor = document.querySelectorAll('.btn-valor');
+    botoesValor.forEach(botao => {
+        botao.addEventListener('click', function(e) {
+            e.preventDefault(); 
+            botoesValor.forEach(b => b.classList.remove('ativo'));
+            this.classList.add('ativo');
+        });
+    });
+
+    const radioBoxes = document.querySelectorAll('.radio-box');
+    radioBoxes.forEach(box => {
+        box.addEventListener('click', function() {
+            radioBoxes.forEach(b => b.classList.remove('ativo'));
+            this.classList.add('ativo');
+            const input = this.querySelector('input[type="radio"]');
+            if (input) input.checked = true;
+        });
     });
 });

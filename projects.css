@@ -516,16 +516,286 @@ progress::-webkit-progress-bar { background-color: var(--cor-creme); border-radi
 /* ==========================================================================
    OUTROS ESTILOS DA PÁGINA (Layouts)
 ========================================================================== */
-.seccao-hero-projetos { padding: 150px 5% 100px; }
-.cont-hero { max-width: 700px; }
-.botoes-hero { display: flex; align-items: center; gap: 30px; margin-top: 40px; }
+/* =========================
+   SECÇÃO 1: HERO (CORREÇÃO DA IMAGEM)
+========================= */
+.hero-topo {
+    position: relative; /* Transforma a secção no limite absoluto */
+    display: flex;
+    align-items: center; /* Centra o texto na vertical */
+    background-color: var(--cor-creme);
+    padding: 140px 5% 80px 5%; /* Devolve o espaço de respiro para o texto */
+    min-height: 85vh;
+    overflow: hidden; /* CORTA qualquer sobra da imagem que passe para baixo da secção */
+}
 
-.seccao-opcoes-contribuicao { background-color: var(--cor-laranja); padding: 100px 5%; color: var(--cor-branco); }
-.cabecalho-opcoes { margin-bottom: 60px; text-align: center; display: flex; flex-direction: column; align-items: center;}
-.texto-apoio-claro { font-size: 11px; font-weight: 800; letter-spacing: 1px; color: rgba(255,255,255,0.7); margin-top: 20px;}
-.grid-duas-colunas { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
-.linha-topo-opcao { display: flex; align-items: center; gap: 15px; font-weight: 800; margin-bottom: 30px; color: var(--cor-branco);}
-.linha-topo-opcao span { flex: 1; height: 1px; background-color: rgba(255,255,255,0.3); }
+/* --- Coluna da Esquerda (Texto) --- */
+.hero-texto-coluna {
+    width: 55%; 
+    max-width: 650px;
+    position: relative;
+    z-index: 2; /* Garante que o texto fica sempre por cima de tudo */
+}
+
+.hero-etiqueta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 13px;
+    font-weight: 800;
+    color: #b8541e;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero-etiqueta .traco {
+    width: 30px;
+    height: 2px;
+    background-color: #b8541e;
+}
+
+.hero-texto-coluna h1 {
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    color: #292522;
+    margin-bottom: 25px;
+}
+
+.hero-texto-coluna p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #756e68;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+.hero-botoes {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.btn-laranja-hero {
+    background-color: #b8541e;
+    color: #ffffff;
+    padding: 16px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn-laranja-hero:hover {
+    background-color: #9c4516;
+}
+
+.btn-texto-hero {
+    color: #292522;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* --- Coluna da Direita (Imagem) --- */
+.hero-imagem-coluna {
+    position: absolute;
+    right: 0; /* Cola a imagem ao lado direito */
+    bottom: 0; /* Cola a imagem ao chão da secção */
+    width: 50%; /* Dá metade do ecrã para a imagem */
+    height: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Puxa para baixo */
+    z-index: 1;
+    pointer-events: none; /* Evita que o espaço invisível da imagem bloqueie os cliques nos botões do texto */
+}
+
+.hero-imagem-coluna img {
+    width: 100%;
+    height: 90%; /* O TRUQUE: Torna a imagem de propósito mais alta que a secção para encher a tela */
+    object-fit: cover; 
+    object-position: center bottom; /* Força os braços a tocarem na base */
+    
+    /* O TRUQUE MÁGICO 2: Como a imagem tem margem sobrando em baixo, empurramos a imagem (translateY) 
+       mais para baixo para forçar os braços a passarem o limite invisível e tocarem a linha preta! */
+    transform: scale(1.15) translateY(15%); 
+    transform-origin: bottom center;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 1024px) {
+    .hero-topo { flex-direction: column; padding-top: 140px; }
+    .hero-texto-coluna { width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; padding-bottom: 500px; }
+    .hero-imagem-coluna { width: 100%; right: auto; left: 0; height: 500px; }
+    .hero-imagem-coluna img { transform: scale(1.2) translateY(5%); object-fit: contain; }
+}
+
+/* =========================
+   SECÇÃO 2: OPÇÕES DE CONTRIBUIÇÃO
+========================= */
+.seccao-opcoes-bg {
+    position: relative;
+    background-color: #c45a24; /* Laranja forte de fundo */
+    padding: 120px 5%;
+    overflow: hidden;
+}
+
+/* Imagem do cãozinho esbatida no fundo */
+.overlay-imagem-fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center top;
+    opacity: 0.15; /* Deixa a imagem super suave para não atrapalhar a leitura */
+    mix-blend-mode: multiply; /* Mistura a imagem com o laranja */
+    z-index: 1;
+}
+
+.conteudo-opcoes {
+    position: relative;
+    z-index: 2; /* Mantém o conteúdo em cima da imagem */
+    max-width: 1200px;
+    margin: 0 auto;
+    color: var(--cor-branco);
+}
+
+/* --- Cabeçalho --- */
+.cabecalho-opcoes {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+.texto-central-container {
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+}
+
+.subtitulo-branco-centro {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--cor-branco);
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.traco-branco {
+    width: 30px;
+    height: 2px;
+    background-color: var(--cor-branco);
+}
+
+.texto-central-container h2 {
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.tagline-direita {
+    align-self: flex-end; /* Puxa este texto para a direita */
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* --- Cartões Delineados --- */
+.grid-cards-opcoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.card-opcao-outline {
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Borda fina e semi-transparente */
+    border-radius: 40px; /* Cantos bem arredondados como no design */
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+
+.card-opcao-outline:hover {
+    background-color: rgba(255, 255, 255, 0.05); /* Fica ligeiramente mais claro ao passar o rato */
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.card-numero {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 800;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.traco-curto {
+    width: 20px;
+    height: 2px;
+    background-color: var(--cor-branco);
+}
+
+.card-opcao-outline h3 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.card-opcao-outline p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 50px; /* Empurra o botão mais para baixo */
+    max-width: 90%;
+}
+
+.btn-branco-card {
+    background-color: var(--cor-branco);
+    color: #c45a24;
+    padding: 14px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    margin-top: auto; /* Garante que o botão fica alinhado no fundo se os textos tiverem tamanhos diferentes */
+}
+
+.btn-branco-card:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* --- Responsividade da Secção 2 --- */
+@media (max-width: 1024px) {
+    .grid-cards-opcoes { grid-template-columns: 1fr; }
+    .texto-central-container h2 { font-size: 36px; }
+    .card-opcao-outline { padding: 40px 30px; }
+}
 
 .seccao-oportunidades { padding: 100px 5%; }
 .cabecalho-padrao { max-width: 800px; margin-bottom: 60px; }
@@ -662,113 +932,253 @@ progress::-webkit-progress-bar { background-color: var(--cor-creme); border-radi
 
 .bloco-doacoes { padding: 100px 5%; display: flex; gap: 60px; align-items: flex-start;}
 
-/* ==========================================================================
-   SECÇÃO 5: ÁREA DO VOLUNTÁRIO (CARDS INTERATIVOS)
-========================================================================== */
-.seccao-area-voluntario { padding: 100px 5%; }
-.grid-cards-2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+/* =========================
+   SECÇÃO 5: ÁREA DO VOLUNTÁRIO
+========================= */
+.seccao-area-voluntario {
+    padding: 100px 5%;
+    background-color: var(--cor-creme);
+}
 
-.card-branco-interativo {
-    background-color: var(--cor-branco); padding: 40px; border-radius: 20px; 
-    border: 1px solid rgba(0,0,0,0.05); text-decoration: none; color: var(--cor-texto-escuro);
-    display: flex; flex-direction: column; justify-content: flex-start;
+/* Estrutura das duas colunas */
+.layout-duas-colunas-voluntario {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-top: 50px;
+}
+
+/* Coluna da Imagem (Laptop) */
+.imagem-laptop-voluntario {
+    width: 55%;
+    display: flex;
+    justify-content: center;
+}
+
+.imagem-laptop-voluntario img {
+    width: 100%;
+    max-width: 650px; /* Tamanho generoso para o portátil */
+    height: auto;
+    object-fit: contain;
+}
+
+/* Coluna da Direita (Lista de Recursos) */
+.lista-recursos-voluntario {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.recurso-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.recurso-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--cor-escuro);
+}
+
+.recurso-cabecalho svg {
+    color: var(--cor-escuro);
+}
+
+.recurso-texto {
+    font-size: 15px;
+    color: var(--cor-texto-cinza);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Rodapé separador no fundo da secção */
+.rodape-cta-voluntario {
+    border-top: 1px solid rgba(0, 0, 0, 0.08); /* Linha fina e subtil */
+    margin-top: 80px;
+    padding-top: 50px;
+}
+
+.rodape-cta-voluntario h4 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--cor-escuro);
+    margin-bottom: 15px;
+}
+
+.rodape-cta-voluntario p {
+    font-size: 15px;
+    color: var(--cor-texto-cinza);
+    margin-bottom: 25px;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .layout-duas-colunas-voluntario {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .imagem-laptop-voluntario, .lista-recursos-voluntario {
+        width: 100%;
+    }
+    .lista-recursos-voluntario {
+        align-items: flex-start;
+    }
+}
+/* =========================
+   SECÇÃO 6: CERTIFICADOS DIGITAIS
+========================= */
+.seccao-certificados {
+    padding: 100px 5%;
+    background-color: var(--cor-creme);
+}
+
+.cabecalho-certificados {
+    max-width: 1000px;
+    margin-bottom: 60px; /* Separa o texto da área da imagem */
+}
+
+.cabecalho-certificados h2 {
+    color: var(--cor-escuro);
+    margin-bottom: 20px;
+}
+
+.cabecalho-certificados p {
+    color: var(--cor-texto-cinza);
+    max-width: 950px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.conteudo-certificados {
+    display: flex;
+    align-items: center; /* Mantém o botão centrado verticalmente em relação à imagem */
+    justify-content: flex-start;
+    gap: 80px; /* Distância entre a imagem e o botão */
+}
+
+.imagem-certificado {
+    width: 60%;
+    max-width: 650px; 
+}
+
+.imagem-certificado img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px; /* Caso a imagem cortada não tenha bordas arredondadas */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08); /* Adiciona a sombra suave igual à referência */
+}
+
+.botao-certificado {
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Responsividade da Secção de Certificados */
+@media (max-width: 1024px) {
+    .conteudo-certificados {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+    }
+    .imagem-certificado, .botao-certificado {
+        width: 100%;
+    }
+}
+/* =========================
+   SECÇÃO 10: TRANSPARÊNCIA E RESULTADOS
+========================= */
+.seccao-transparencia {
+    padding: 100px 5%;
+    background-color: var(--cor-creme);
+}
+
+.lista-cards-transparencia {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1050px;
+    margin-top: 50px;
+}
+
+/* Cartões com design assimétrico */
+.card-transparencia {
+    background-color: var(--cor-branco);
+    /* O SEGREDO DO FORMATO: 20px na esquerda, 80px na direita */
+    border-radius: 20px 80px 80px 20px;
+    padding: 35px 50px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    text-decoration: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.card-branco-interativo:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-}
-.topo-card-branco { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
-.icone-circulo {
-    width: 45px; height: 45px; border-radius: 50%; background-color: var(--cor-creme); 
-    display: flex; align-items: center; justify-content: center; color: var(--cor-texto-escuro);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-.card-branco-interativo:hover .icone-circulo {
-    background-color: var(--cor-laranja); color: var(--cor-branco);
-}
-.card-branco-interativo h4 { margin-bottom: 15px; }
-.card-branco-interativo p { font-size: 15px; margin-bottom: 25px; flex-grow: 1;}
-.link-laranja-fino { 
-    color: var(--cor-laranja); font-weight: 700; font-size: 14px; 
-    display: inline-flex; align-items: center; gap: 5px; transition: transform 0.3s ease;
-}
-.card-branco-interativo:hover .link-laranja-fino { transform: translateX(5px); }
 
-.bloco-rodape-voluntario { margin-top: 80px; padding-top: 60px; border-top: 1px solid rgba(0,0,0,0.08); }
-.bloco-rodape-voluntario h4 { margin-bottom: 10px; }
+.card-transparencia:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
 
-/* ==========================================================================
-   SECÇÃO 6: CERTIFICADOS DIGITAIS (MOCKUP)
-========================================================================== */
-.seccao-certificados { padding: 0 5% 100px; display: flex; align-items: center; justify-content: space-between; gap: 60px;}
-.texto-certificados { width: 45%; }
-.grafismo-certificado { width: 50%; display: flex; flex-direction: column; align-items: flex-start; gap: 30px;}
+.card-trans-numero {
+    color: var(--cor-laranja);
+    font-weight: 800;
+    font-size: 15px;
+    flex-shrink: 0;
+    width: 30px;
+}
 
-.mockup-certificado { 
-    width: 100%; max-width: 450px; background-color: var(--cor-branco); 
-    border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+.card-trans-conteudo {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card-trans-conteudo h4 {
+    margin: 0;
+    font-size: 22px;
+    color: var(--cor-texto-escuro);
+    font-weight: 800;
+}
+
+.card-trans-conteudo p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--cor-texto-cinza);
+}
+
+/* Link encostado à direita e ligeiramente alinhado à base */
+.card-trans-link {
+    color: var(--cor-laranja);
+    font-weight: 800;
+    font-size: 13px;
+    flex-shrink: 0;
+    align-self: flex-end; /* Empurra o link para ficar alinhado com o parágrafo */
     transition: transform 0.3s ease;
 }
-.mockup-certificado:hover { transform: scale(1.02); }
 
-.topo-mockup { background-color: var(--cor-laranja); padding: 30px; display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,0.5);}
-.mockup-certificado h4 { padding: 30px 30px 20px; margin: 0; color: var(--cor-laranja);}
-
-.linhas-mockup { padding: 0 30px 40px; }
-.linhas-mockup div[class^="linha-"] { height: 8px; background-color: var(--cor-creme); border-radius: 4px; margin-bottom: 12px; }
-.linhas-mockup .linha-1 { width: 100%; } 
-.linhas-mockup .linha-2 { width: 60%; } 
-.linhas-mockup .linha-3 { width: 40%; margin-bottom: 30px;}
-.pontos-mockup { display: flex; justify-content: space-between; border-top: 1px solid var(--cor-creme); padding-top: 20px;}
-.pontos-mockup span { width: 6px; height: 6px; border-radius: 50%; background-color: var(--cor-laranja); }
-
-/* ==========================================================================
-   SECÇÃO 9: RECURSOS E TRANSPARÊNCIA (CARDS)
-========================================================================== */
-.bloco-recursos { padding: 100px 5%; }
-.bloco-transparencia { padding: 100px 5%; }
-.texto-branco-opaco { color: rgba(255,255,255,0.85); max-width: 600px;}
-.grid-cards-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
-
-.card-branco { 
-    background-color: var(--cor-branco); padding: 35px 25px; border-radius: 20px; 
-    box-shadow: 0 5px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column;
+.card-transparencia:hover .card-trans-link {
+    transform: translateX(5px); /* Dá um pequeno salto para a direita ao passar o rato */
 }
 
-/* Agrupamos card-alto e card-alto-link para terem a mesma altura */
-.card-alto, .card-alto-link { min-height: 280px; }
-
-/* Removemos o azul padrão do link e definimos a cor base do texto */
-.card-alto-link { 
-    text-decoration: none; 
-    color: var(--cor-texto-escuro); /* Remove o azul */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-}
-
-/* Agrupamos h4 e p para funcionarem perfeitamente em ambos os tipos de cards */
-.card-alto h4, .card-alto-link h4 { 
-    margin: 20px 0 15px; 
-    color: var(--cor-texto-escuro); 
-    font-size: 22px;
-}
-
-.card-alto p, .card-alto-link p { 
-    font-size: 14px; 
-    margin: 0; 
-    color: var(--cor-texto-cinza); /* Garante que o parágrafo no link não fica azul */
-}
-
-/* Efeitos de Hover para os Cards com Links na Transparência */
-.card-alto-link:hover { 
-    transform: translateY(-8px); 
-    box-shadow: 0 15px 35px rgba(0,0,0,0.08); 
-}
-
-.mt-auto { margin-top: auto; padding-top: 20px; }
-
-.card-alto-link:hover .link-laranja-fino { 
-    transform: translateX(5px); 
+/* Responsividade da Secção */
+@media (max-width: 768px) {
+    .card-transparencia {
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 20px; /* Em ecrãs pequenos, as bordas ficam uniformes */
+        padding: 30px;
+        gap: 20px;
+    }
+    .card-trans-link {
+        align-self: flex-start;
+    }
 }
 
 /* ==========================================================================
