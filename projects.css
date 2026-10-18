@@ -1631,3 +1631,160 @@ progress::-webkit-progress-bar { background-color: var(--cor-creme); border-radi
         text-align: center;
     }
 }
+
+/* =========================
+   PÁGINA DE CADASTRO
+========================= */
+.seccao-cadastro {
+    padding: 180px 5% 100px; /* Espaço para a navbar fixa */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cabecalho-cadastro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.cabecalho-cadastro h1 {
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--cor-laranja);
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.cabecalho-cadastro p {
+    font-size: 16px;
+    color: var(--cor-texto-cinza);
+    margin: 0;
+}
+
+/* Estrutura do Formulário */
+.formulario-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.grupo-campos {
+    border: 1px solid rgba(217, 102, 39, 0.4); /* Borda laranja suave */
+    border-radius: 12px;
+    padding: 40px 30px 30px;
+    position: relative;
+    background-color: transparent;
+}
+
+.grupo-campos legend {
+    color: var(--cor-laranja);
+    font-size: 18px;
+    font-weight: 700;
+    padding: 0 15px;
+    margin-left: 20px;
+}
+
+/* Linhas e Colunas */
+.linha-form {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.linha-form:last-child {
+    margin-bottom: 0;
+}
+
+.campo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1; /* Faz as colunas dividirem o espaço 50/50 */
+}
+
+.campo-form.largura-total {
+    flex: 100%;
+}
+
+.campo-form label {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--cor-texto-escuro);
+    padding-left: 5px;
+}
+
+/* Estilo dos Inputs e Selects */
+.campo-form input,
+.campo-form select {
+    width: 100%;
+    background-color: #eaddd3; /* Bege igual à imagem */
+    border: none;
+    border-radius: 12px; /* Cantos arredondados */
+    padding: 16px 20px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    color: var(--cor-texto-escuro);
+    outline: none;
+    transition: box-shadow 0.3s;
+}
+
+.campo-form input:focus,
+.campo-form select:focus {
+    box-shadow: 0 0 0 2px var(--cor-laranja); /* Destaque ao clicar */
+}
+
+.campo-form input::placeholder {
+    color: rgba(41, 37, 34, 0.5); /* Cor do texto de exemplo */
+}
+
+/* Estilo específico para o select (Seta) */
+.campo-form select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23292522%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M6%209l6%206%206-6%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 16px;
+    padding-right: 45px;
+    cursor: pointer;
+}
+
+/* Botão Finalizar Cadastro */
+.container-botao-enviar {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn-enviar-cadastro {
+    background-color: #ba5d33;
+    color: #ffffff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    padding: 16px 50px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-enviar-cadastro:hover {
+    background-color: #9c4516;
+    transform: translateY(-2px);
+}
+
+/* Responsividade do Formulário */
+@media (max-width: 768px) {
+    .linha-form {
+        flex-direction: column;
+        gap: 25px;
+    }
+    .grupo-campos {
+        padding: 30px 20px 20px;
+    }
+    .btn-enviar-cadastro {
+        width: 100%;
+    }
+}
